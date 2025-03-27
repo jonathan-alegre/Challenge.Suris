@@ -24,6 +24,9 @@ namespace Challenge.Suris.Data
             try
             {
                 var reservation = _mapper.Map<Reservation>(reservationRequestDTO);
+
+                reservation.CreationDate = DateTime.Now;
+
                 _db.Reservations.Add(reservation);
                 await _db.SaveChangesAsync();
 

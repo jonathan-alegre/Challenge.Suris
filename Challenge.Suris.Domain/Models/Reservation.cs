@@ -20,5 +20,8 @@ namespace Challenge.Suris.Domain.Models
 
         [Required]
         public string ClientName { get; set; }
+
+        [Required]
+        public DateTime CreationDate { get; set; }
     }
 }

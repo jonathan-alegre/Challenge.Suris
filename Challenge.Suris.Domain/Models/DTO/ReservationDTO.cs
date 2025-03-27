@@ -11,5 +11,7 @@
         public Schedule Schedule { get; set; }
 
         public string ClientName { get; set; }
+
+        public DateTime CreationDate { get; set; }
     }
 }

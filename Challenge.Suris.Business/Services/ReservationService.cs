@@ -34,12 +34,6 @@ namespace Challenge.Suris.Business.Services
             return _responseDTO;
         }
 
-        public async Task<IEnumerable<ReservationDTO>> GetAllReservationsAsync()
-        {
-            var reservationsDTO = await _reservationDAO.GetAllReservationsAsync();
-            return reservationsDTO;
-        }
-
         private async Task<bool> ReservationIsValid(ReservationRequestDTO reservationRequestDTO)
         {
             if (string.IsNullOrEmpty(reservationRequestDTO.ClientName))
@@ -71,6 +65,12 @@ namespace Challenge.Suris.Business.Services
             }
 
             return true;
+        }
+
+        public async Task<IEnumerable<ReservationDTO>> GetAllReservationsAsync()
+        {
+            var reservationsDTO = await _reservationDAO.GetAllReservationsAsync();
+            return reservationsDTO;
         }
     }
 }
