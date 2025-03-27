@@ -17,5 +17,11 @@ namespace Challenge.Suris.Business.Services
             var schedulesDTO = await _scheduleDAO.GetAllSchedulesAsync();
             return schedulesDTO;
         }
+
+        public async Task<IEnumerable<ScheduleDTO>> GetSchedulesByServiceAsync(int serviceId)
+        {
+            var schedulesDTO = await _scheduleDAO.GetSchedulesByServiceAsync(serviceId);
+            return schedulesDTO;
+        }
     }
 }
