@@ -14,8 +14,8 @@ namespace Challenge.Suris.Business.Services
 
         public async Task<IEnumerable<ServiceDTO>> GetAllServicesAsync()
         {
-            var services = await _serviceDAO.GetAllServicesAsync();
-            return services;
+            var servicesDTO = await _serviceDAO.GetAllServicesAsync();
+            return servicesDTO;
         }
     }
 }

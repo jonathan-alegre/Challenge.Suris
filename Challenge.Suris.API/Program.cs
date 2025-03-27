@@ -14,7 +14,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:5173")
+                          policy.WithOrigins(builder.Configuration.GetValue<string>("AllowedOrigins")!)
                                 .AllowAnyHeader()
                                 .AllowAnyMethod(); ;
                       });
@@ -36,6 +36,9 @@ builder.Services.AddScoped<IReservationDAO, ReservationDAO>();
 
 builder.Services.AddScoped<IServiceService, ServiceService>();
 builder.Services.AddScoped<IServiceDAO, ServiceDAO>();
+
+builder.Services.AddScoped<IScheduleService, ScheduleService>();
+builder.Services.AddScoped<IScheduleDAO, ScheduleDAO>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

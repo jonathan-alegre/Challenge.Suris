@@ -7,5 +7,6 @@ namespace Challenge.Suris.Domain.Interfaces
         Task<IEnumerable<ReservationDTO>> GetAllReservationsAsync();
         Task<ResponseDTO> CreateReservationAsync(ReservationRequestDTO reservationRequestDTO);
         Task<IEnumerable<ReservationDTO>> GetReservationsByServiceSchedule(int serviceId, int scheduleId);
+        Task<IEnumerable<ReservationDTO>> GetReservationsByClientSchedule(string clientName, int scheduleId);
     }
 }

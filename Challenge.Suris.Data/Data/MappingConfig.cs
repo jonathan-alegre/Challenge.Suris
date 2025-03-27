@@ -13,6 +13,7 @@ namespace Mango.Services.OrderAPI
                 config.CreateMap<Reservation, ReservationDTO>().ReverseMap();
                 config.CreateMap<Reservation, ReservationRequestDTO>().ReverseMap();
                 config.CreateMap<Service, ServiceDTO>().ReverseMap();
+                config.CreateMap<Schedule, ScheduleDTO>().ReverseMap();
             });
 
             return mappingConfig;
