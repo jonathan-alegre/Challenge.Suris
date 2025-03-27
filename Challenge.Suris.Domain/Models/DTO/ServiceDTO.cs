@@ -1,12 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace Challenge.Suris.Data.Models
+﻿namespace Challenge.Suris.Domain.Models.DTO
 {
-    public class Service
+    public class ServiceDTO
     {
-        [Key]
         public int ServiceId { get; set; }
-        [Required]
         public string Name { get; set; }
         public string Description { get; set; }
     }

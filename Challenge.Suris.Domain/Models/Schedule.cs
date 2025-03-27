@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Challenge.Suris.Data.Models
+namespace Challenge.Suris.Domain.Models
 {
     public class Schedule
     {

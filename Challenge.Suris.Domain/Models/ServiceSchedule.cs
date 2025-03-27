@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Challenge.Suris.Data.Models
+namespace Challenge.Suris.Domain.Models
 {
     [PrimaryKey(nameof(ScheduleId), nameof(ServiceId))]
     public class ServiceSchedule

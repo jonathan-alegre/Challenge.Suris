@@ -1,7 +1,7 @@
-﻿using Challenge.Suris.Data.Models;
+﻿using Challenge.Suris.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Challenge.Suris.API.Data
+namespace Challenge.Suris.Data
 {
     public class AppDbContext: DbContext
     {

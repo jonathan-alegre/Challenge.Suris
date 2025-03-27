@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Challenge.Suris.Data.Models
+namespace Challenge.Suris.Domain.Models
 {
     public class Reservation
     {
