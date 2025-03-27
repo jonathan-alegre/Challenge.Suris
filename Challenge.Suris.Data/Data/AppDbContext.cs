@@ -153,6 +153,54 @@ namespace Challenge.Suris.Data
                 ScheduleId = 9,
                 ServiceId = 3
             });
+
+            modelBuilder.Entity<ServiceSchedule>().HasData(new ServiceSchedule
+            {
+                ScheduleId = 2,
+                ServiceId = 2
+            });
+
+            modelBuilder.Entity<ServiceSchedule>().HasData(new ServiceSchedule
+            {
+                ScheduleId = 3,
+                ServiceId = 2
+            });
+
+            modelBuilder.Entity<ServiceSchedule>().HasData(new ServiceSchedule
+            {
+                ScheduleId = 4,
+                ServiceId = 1
+            });
+
+            modelBuilder.Entity<ServiceSchedule>().HasData(new ServiceSchedule
+            {
+                ScheduleId = 5,
+                ServiceId = 1
+            });
+
+            modelBuilder.Entity<ServiceSchedule>().HasData(new ServiceSchedule
+            {
+                ScheduleId = 6,
+                ServiceId = 2
+            });
+
+            modelBuilder.Entity<ServiceSchedule>().HasData(new ServiceSchedule
+            {
+                ScheduleId = 7,
+                ServiceId = 2
+            });
+
+            modelBuilder.Entity<ServiceSchedule>().HasData(new ServiceSchedule
+            {
+                ScheduleId = 8,
+                ServiceId = 2
+            });
+
+            modelBuilder.Entity<ServiceSchedule>().HasData(new ServiceSchedule
+            {
+                ScheduleId = 9,
+                ServiceId = 2
+            });
         }
     }
 }
