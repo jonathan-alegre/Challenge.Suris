@@ -6,12 +6,14 @@ namespace Challenge.Suris.Business.Services
     public class ReservationService: IReservationService
     {
         private readonly IReservationDAO _reservationDAO;
+        private readonly IScheduleDAO _scheduleDAO;
         private ResponseDTO _responseDTO;
 
-        public ReservationService(IReservationDAO reservationDAO)
+        public ReservationService(IReservationDAO reservationDAO, IScheduleDAO scheduleDAO)
         {
             _reservationDAO = reservationDAO;
             _responseDTO = new ResponseDTO();
+            _scheduleDAO = scheduleDAO;
         }
 
         public async Task<ResponseDTO> CreateReservationAsync(ReservationRequestDTO reservationRequestDTO)
@@ -60,6 +62,19 @@ namespace Challenge.Suris.Business.Services
             {
                 _responseDTO.IsSuccess = false;
                 _responseDTO.Message = "El cliente ya tiene una Reserva para ese día y horario.";
+
+                return false;
+            }
+
+            var scheduleClientById = await _scheduleDAO.GetSchedulesById(reservationRequestDTO.ScheduleId);
+
+            var reservationsClientByDay = await _reservationDAO.GetReservationsByClientAndDay(reservationRequestDTO.ClientName, scheduleClientById.FirstOrDefault()!.DateTime);
+
+
+            if (reservationsClientByDay.Any())
+            {
+                _responseDTO.IsSuccess = false;
+                _responseDTO.Message = "El cliente ya tiene una Reserva para ese día.";
 
                 return false;
             }

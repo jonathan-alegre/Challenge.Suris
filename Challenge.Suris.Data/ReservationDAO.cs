@@ -49,6 +49,16 @@ namespace Challenge.Suris.Data
             return reservationsDTO;
         }
 
+        public async Task<IEnumerable<ReservationDTO>> GetReservationsByClientAndDay(string clientName, DateTime day)
+        {
+            var reservations = await _db.Reservations.Where(r => r.ClientName.ToUpper().Trim() == clientName.ToUpper().Trim()
+                                                                 && r.Schedule.DateTime.Date == day.Date).ToListAsync();
+
+            var reservationsDTO = _mapper.Map<IEnumerable<ReservationDTO>>(reservations);
+
+            return reservationsDTO;
+        }
+
         public async Task<IEnumerable<ReservationDTO>> GetReservationsByClientSchedule(string clientName, int scheduleId)
         {
             var reservations = await _db.Reservations.Where(r => r.ClientName.ToUpper().Trim() == clientName.ToUpper().Trim()

@@ -6,5 +6,6 @@ namespace Challenge.Suris.Domain.Interfaces
     {
         Task<IEnumerable<ScheduleDTO>> GetAllSchedulesAsync();
         Task<IEnumerable<ScheduleDTO>> GetSchedulesByServiceAsync(int serviceId);
+        Task<IEnumerable<ScheduleDTO>> GetSchedulesById(int scheduleId);
     }
 }

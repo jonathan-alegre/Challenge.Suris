@@ -24,6 +24,14 @@ namespace Challenge.Suris.Data
             return schedulesDTO;
         }
 
+        public async Task<IEnumerable<ScheduleDTO>> GetSchedulesById(int scheduleId)
+        {
+            var schedules = await _db.Schedules.Where(s => s.ScheduleId == scheduleId).ToListAsync();
+            var schedulesDTO = _mapper.Map<IEnumerable<ScheduleDTO>>(schedules);
+
+            return schedulesDTO;
+        }
+
         public async Task<IEnumerable<ScheduleDTO>> GetSchedulesByServiceAsync(int serviceId)
         {
             var schedules = await _db.ServiceSchedules.Where(s => s.ServiceId == serviceId).Select(s => s.Schedule).ToListAsync();
